@@ -1,5 +1,12 @@
-<div>
-  <div *ngFor="let todo of todos">
+<button (click)="createTodo()">Créer un TODO</button>
+<div style="float: left;width: 50%">
+  <div *ngFor="let todo of todos" (dblclick)="deleteTodo(todo.id)">
+    <h2>Tâche n°{{todo.id}}</h2>
+    <p>{{ todo.content }}</p>
+  </div>
+</div>
+<div style="float: right;width: 50%">
+  <div *ngFor="let todo of filteredTodos" (dblclick)="deleteTodo(todo.id)">
     <h2>Tâche n°{{todo.id}}</h2>
     <p>{{ todo.content }}</p>
   </div>
